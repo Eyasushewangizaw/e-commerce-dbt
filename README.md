@@ -14,3 +14,13 @@ This project demonstrates an end-to-end analytics workflow:
 ## Architecture
 
 <img width="878" height="286" alt="Untitled Diagram drawio (2)" src="https://github.com/user-attachments/assets/d97bdc99-721c-4ab8-a339-96f50a38021c" />
+
+## Tech Stack
+
+| Component | Version |
+|-----------|---------|
+| Python | 3.11 |
+| dbt-core | 1.11.6 |
+| dbt-postgres | 1.10.0 |
+| PostgreSQL | 15 |
+| Docker Compose | 3.9 |
