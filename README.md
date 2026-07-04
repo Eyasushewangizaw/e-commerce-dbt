@@ -24,3 +24,25 @@ This project demonstrates an end-to-end analytics workflow:
 | dbt-postgres | 1.10.0 |
 | PostgreSQL | 15 |
 | Docker Compose | 3.9 |
+
+## Project Structure
+
+```
+e-commerce-dbt/
+├── data_source/
+│   └── generate_sales.py       # Synthetic data generator
+├── dbt_project/
+│   ├── .dbt/
+│   │   └── profiles.yml        # Database connection profile
+│   └── dbt_ecomm/
+│       ├── dbt_project.yml
+│       ├── models/
+│       │   ├── bronze/         # Raw layer
+│       │   ├── silver/         # Cleaned layer
+│       │   └── gold/           # Analytics-ready star schema
+│       └── seeds/
+│           └── ecommerce_sales.csv
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
