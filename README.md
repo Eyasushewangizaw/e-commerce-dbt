@@ -61,3 +61,30 @@ The included Python generator (`data_source/generate_sales.py`) creates 1,000 re
 - Invalid `country` codes
 - Duplicate `transaction_id`
 
+### Bronze Layer
+
+| Model | Materialization | Description |
+|-------|-----------------|-------------|
+| `bronze_eccomerce` | View | Pass-through of raw seed data |
+
+### Silver Layer
+
+| Model | Materialization | Description |
+|-------|-----------------|-------------|
+| `silver_eccomerce` | Table | Cleans and standardizes data |
+
+Silver transformations include:
+
+- Casting `order_date` to date
+- Normalizing invalid countries to `Unknown`
+- Replacing non-positive quantities with `1` and prices with `0`
+- Filtering out rows with null `customer_id` or future dates
+- Deduplicating by `transaction_id` (keeps most recent order)
+
+### Gold Layer (Star Schema)
+
+| Model | Materialization | Description |
+|-------|-----------------|-------------|
+| `dim_customer` | Table | Distinct customers with name and country |
+| `dim_product` | Table | Distinct products with category |
+| `fct_order` | Table | Order facts with `total_amount` (`quantity * price`) |
