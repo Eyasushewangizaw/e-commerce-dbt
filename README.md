@@ -88,3 +88,75 @@ Silver transformations include:
 | `dim_customer` | Table | Distinct customers with name and country |
 | `dim_product` | Table | Distinct products with category |
 | `fct_order` | Table | Order facts with `total_amount` (`quantity * price`) |
+
+
+## Prerequisites
+
+- [Docker](https://www.docker.com/) and Docker Compose
+- (Optional) Python 3.11+ with `pandas`, `numpy`, and `faker` if you want to regenerate source data locally
+
+## Getting Started
+
+### 1. Start the infrastructure
+
+From the project root:
+
+```bash
+docker compose up -d --build
+```
+
+This starts:
+
+- **PostgreSQL** on port `5432` (database: `e-commerce-dbt`)
+- **dbt** container with the project mounted at `/usr/app`
+
+### 2. Run the dbt pipeline
+
+Execute dbt commands inside the dbt container:
+
+```bash
+# Load seed data into PostgreSQL
+docker exec -it dbt_core seed --project-dir dbt_ecomm
+
+# Build all models (bronze → silver → gold)
+docker exec -it dbt_core run --project-dir dbt_ecomm
+
+# (Optional) Run tests if defined
+docker exec -it dbt_core test --project-dir dbt_ecomm
+```
+
+To open an interactive shell in the dbt container:
+
+```bash
+docker exec -it dbt_core bash
+cd dbt_ecomm
+dbt seed
+dbt run
+```
+
+### 3. Query the results
+
+Connect to PostgreSQL using any SQL client:
+
+| Setting | Value |
+|---------|-------|
+| Host | `localhost` |
+| Port | `5432` |
+| Database | `e-commerce-dbt` |
+| User | `eyasu` |
+| Schema | `dev_schema` |
+
+Example query:
+
+```sql
+SELECT
+    c.customer_name,
+    p.product_category,
+    f.total_amount,
+    f.order_status
+FROM dev_schema.fct_order f
+JOIN dev_schema.dim_customer c ON f.customer_id = c.customer_id
+JOIN dev_schema.dim_product p ON f.product_id = p.product_id
+LIMIT 10;
+```
+
