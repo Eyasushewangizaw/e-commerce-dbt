@@ -46,3 +46,18 @@ e-commerce-dbt/
 ├── docker-compose.yml
 └── README.md
 ```
+
+## Data Model
+
+### Source Data (`ecommerce_sales` seed)
+
+Each row represents an e-commerce transaction with fields such as `transaction_id`, `order_date`, `customer_id`, `product_id`, `quantity`, `price`, `payment_method`, and `order_status`.
+
+The included Python generator (`data_source/generate_sales.py`) creates 1,000 records and injects ~15% intentional errors for testing data quality logic:
+
+- Null `customer_id`
+- Negative `quantity` or `price`
+- Future `order_date`
+- Invalid `country` codes
+- Duplicate `transaction_id`
+
