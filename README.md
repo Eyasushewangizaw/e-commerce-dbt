@@ -134,7 +134,7 @@ dbt seed
 dbt run
 ```
 
-### 3. Query the 
+### 3. Query the results
 
 Connect to PostgreSQL using any SQL client:
 
