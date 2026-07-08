@@ -163,6 +163,6 @@ LIMIT 10;
 
 Database connection settings live in `dbt_project/.dbt/profiles.yml`. Docker Compose mounts this file into the dbt container automatically.
 
-stgreSQL credentials are defined in `docker-compose.yml` and must match `profiles.yml`. Update both files if you change the database user or password.
+stgreSQL credentials are defined in `docker-compose.yml` and must match `profiles.yml`. Update both files if you change the database user or password
 
 
