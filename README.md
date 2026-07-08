@@ -159,4 +159,8 @@ JOIN dev_schema.dim_customer c ON f.customer_id = c.customer_id
 JOIN dev_schema.dim_product p ON f.product_id = p.product_id
 LIMIT 10;
 ```
+## Configuration
+
+Database connection settings live in `dbt_project/.dbt/profiles.yml`. Docker Compose mounts this file into the dbt container automatically.
+
 
