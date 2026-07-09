@@ -166,3 +166,16 @@ Database connection settings live in `dbt_project/.dbt/profiles.yml`. Docker Com
 stgreSQL credentials are defined in `docker-compose.yml` and must match `profiles.yml`. Update both files if you change the database user or password.
 
 
+> **Note:** Default credentials are intended for local development only. Change them before deploying to any shared or production environment.
+
+## Stopping the Environment
+
+```bash
+docker compose down
+```
+
+To remove persisted database data as well:
+
+```bash
+docker compose down -v
+```
