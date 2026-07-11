@@ -179,3 +179,5 @@ To remove persisted database data as well:
 ```bash
 docker compose down -v
 ```
+
+## pipeline execution
