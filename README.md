@@ -181,3 +181,11 @@ docker compose down -v
 ```
 
 ## pipeline execution
+
+<img width="1346" height="711" alt="Screenshot 2026-06-29 194938" src="https://github.com/user-attachments/assets/3fb952fc-4c67-486f-a34b-955118f98de4" />
+<img width="1907" height="946" alt="Screenshot 2026-06-29 195046" src="https://github.com/user-attachments/assets/ba5d8058-afb3-40e4-8e8d-597d9b4fe785" />
+<img width="1888" height="963" alt="Screenshot 2026-06-29 195106" src="https://github.com/user-attachments/assets/4788b60a-ba12-4ec6-9db3-009583785215" />
+
+
+
+
