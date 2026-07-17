@@ -192,6 +192,7 @@ docker compose down -v
 <img width="1629" height="957" alt="Screenshot 2026-06-30 122700" src="https://github.com/user-attachments/assets/9cdf693a-a2d3-4fd1-847f-4dc44dc221f5" />
 <img width="1708" height="940" alt="Screenshot 2026-06-30 122647" src="https://github.com/user-attachments/assets/9983cd3a-167f-4bcb-8666-e32d6c7689c0" />
 <img width="1900" height="686" alt="Screenshot 2026-06-30 115131" src="https://github.com/user-attachments/assets/32f8024e-cff8-4e1f-8dfb-50889b526b21" />
+<img width="1898" height="662" alt="Screenshot 2026-06-30 114129" src="https://github.com/user-attachments/assets/d5a1098b-6958-4bb0-a02b-5a11f551d000" />
 
 
 
