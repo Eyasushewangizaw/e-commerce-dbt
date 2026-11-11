@@ -197,4 +197,4 @@ docker compose down -v
 <img width="1915" height="951" alt="Screenshot 2026-06-30 100501" src="https://github.com/user-attachments/assets/da0da9e2-3e0f-43a4-ac62-88c6ef9095b5" />
 
 
-
+## Visualization
