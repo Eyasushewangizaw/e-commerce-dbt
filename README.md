@@ -198,3 +198,6 @@ docker compose down -v
 
 
 ## Visualization
+
+<img width="1164" height="568" alt="image" src="https://github.com/user-attachments/assets/3068d736-8ac8-442b-b3f1-4ca3ab17f89e" />
+
